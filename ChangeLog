@@ -1,0 +1,539 @@
+2008-12-13  semente
+
+	* [r181] ChangeLog, setup.py: Better name in setup.py.
+
+	* [r180] MANIFEST.in, diario/__init__.py, setup.py: Version changed to
+	  0.2 final and others minor changes
+
+	* [r179] diario/utils.py, docs/admin.txt, docs/install.txt,
+	  docs/utils.txt, docs/views.txt: Docs updated.
+
+	* [r178] docs/overview.txt: Overview updated.
+
+	* [r177] diario/locale/es/LC_MESSAGES/django.po,
+	  diario/locale/fr/LC_MESSAGES/django.po,
+	  diario/locale/pt_BR/LC_MESSAGES/django.po: POT files updated.
+
+2008-12-11  semente
+
+	* [r174] MANIFEST.in, setup.py: Updated setup and MANIFEST.in files.
+
+	* [r172] diario/signals.py, diario/utils.py: ReFixed #11. Function
+	  renamed, more comprehensive.
+
+2008-12-01  tioerre
+
+	* [r170] diario/templatetags/diario_entries.py: Fixed docstring from
+	  django_entries to diario_entries (issue #47)
+
+2008-11-26  semente
+
+	* [r166] docs/overview.txt: Added Support section in overview doc.
+
+2008-11-07  semente
+
+	* [r165] docs/signals.txt: Added documentation for signals.
+
+	* [r164] diario/utils.py, docs/overview.txt, docs/utils.txt: Fixed #11
+	  -- Ping-o-matic support.
+
+	* [r163] ChangeLog: Fixed #26 -- Add changelog.
+
+	* [r162] docs/admin.txt, docs/install.txt, docs/tags.txt: Fixed #45 --
+	  feeds import error in docs.
+
+2008-11-04  semente
+
+	* [r160] AUTHORS, diario/models.py, diario/signals.py, diario/utils.py:
+	  Added a new signal for ping-o-matic and refatoring in signals
+	  callbacks.
+
+	* [r159] examples/basic_blog/templates/base.html: Changed info of
+	  basic_blog example.
+
+2008-10-25  semente
+
+	* [r155] diario/signals.py: Removed unused import in signals.
+
+	* [r154] examples/basic_blog/templates/base_2col.html,
+	  examples/basic_blog/templates/flatfiles/homepage.html: Fixed template
+	  tag loads in basic blog example.
+
+	* [r153] diario/utils.py: Added ping-o-matic helper.
+
+	* [r152] examples/basic_blog[CPY], examples/basic_blog/__init__.py[CPY],
+	  examples/basic_blog/manage.py[CPY],
+	  examples/basic_blog/settings.py[CPY],
+	  examples/basic_blog/templates[CPY],
+	  examples/basic_blog/templates/base.html[CPY],
+	  examples/basic_blog/templates/base_2col.html[CPY],
+	  examples/basic_blog/templates/diario[CPY],
+	  examples/basic_blog/templates/diario/entry_archive_day.html[CPY],
+	  examples/basic_blog/templates/diario/entry_archive_month.html[CPY],
+	  examples/basic_blog/templates/diario/entry_archive_year.html[CPY],
+	  examples/basic_blog/templates/diario/entry_detail.html[CPY],
+	  examples/basic_blog/templates/diario/entry_list.html[CPY],
+	  examples/basic_blog/templates/flatfiles[CPY],
+	  examples/basic_blog/templates/flatfiles/homepage.html[CPY],
+	  examples/basic_blog/urls.py[CPY], examples/media[DEL],
+	  examples/projects[DEL], examples/templates[DEL]: Refactoring examples
+	  and adapt to the new code.
+
+	* [r151] diario/models.py, diario/signals.py: Refactoring signals.
+
+	* [r150] diario/feeds.py[DEL]: Deleting feeds.py, missing in last commit
+	  (feeds are now in package).
+
+	* [r149] diario/feeds[CPY], diario/feeds/__init__.py,
+	  diario/feeds/comments.py, diario/feeds/entries.py,
+	  diario/feeds/tagged.py, diario/templatetags/diario_comments.py,
+	  diario/templatetags/diario_entries.py[CPY],
+	  diario/templatetags/diario_tags.py[DEL]: Refactoring feeds and
+	  template tags.
+
+2008-10-21  semente
+
+	* [r146] docs/tags.txt: Fixed #43 -- Wrong templatetags example.
+
+	* [r143] diario/__init__.py, diario/utils.py: get_version() now don't
+	  appends Subversion release.
+
+	* [r142] COPYING[DEL], COPYING.LESSER, README, diario/__init__.py,
+	  diario/admin.py, diario/feeds.py,
+	  diario/locale/es/LC_MESSAGES/django.po,
+	  diario/locale/fr/LC_MESSAGES/django.po,
+	  diario/locale/pt_BR/LC_MESSAGES/django.po, diario/managers.py,
+	  diario/models.py, diario/settings.py, diario/sitemaps.py,
+	  diario/templatetags/diario_tags.py, diario/urls/entries.py,
+	  diario/urls/tagged.py, diario/utils.py, diario/views/entries.py,
+	  diario/views/syndication.py, diario/views/tagged.py, setup.py: Fixed
+	  #36 -- Change license to LGPLv3
+
+2008-10-15  semente
+
+	* [r140] diario/models.py: Fixed a bug of last commit: default parameter
+	  in publish_on field now works
+	  in new projects or projects that doesn't have the table django_site
+	  previously.
+
+2008-10-13  semente
+
+	* [r139] diario/models.py: publish_on now have the current site as
+	  default value.
+
+2008-09-29  semente
+
+	* [r138] diario/feeds.py, diario/templatetags/diario_tags.py: Fixed
+	  order of comments in feed and template tag.
+
+2008-09-25  semente
+
+	* [r137] docs/install.txt, docs/tags.txt: Updated documentation to the
+	  recente changes.
+
+	* [r135] AUTHORS, diario/feeds.py, diario/templatetags/diario_tags.py:
+	  Fixed #39 -- Diario users deprecated FreeComment (thanks Rodrigo!)
+
+2008-09-06  semente
+
+	* [r134] diario/urls/entries.py, diario/urls/tagged.py,
+	  diario/views/entries.py, diario/views/syndication.py,
+	  diario/views/tagged.py: Fixed #35 -- Work-around for django generic
+	  views cache-like behavior (thanks
+	  Ovidiu Pascut!)"
+
+2008-08-27  semente
+
+	* [r133] AUTHORS, diario/models.py: Fixed #37 -- Python 2.3
+	  compatibility (Thanks David!)
+
+2008-08-15  semente
+
+	* [r132] diario/urls/entries.py, diario/urls/tagged.py: Better code
+	  portability in url modules.
+
+	* [r131] diario/managers.py, diario/urls/entries.py: Deleted trailing
+	  whitespace.
+
+	* [r130] diario/locale/pt_BR/LC_MESSAGES/django.mo,
+	  diario/locale/pt_BR/LC_MESSAGES/django.po: Added address to report
+	  bugs in Brazilian Portuguese locale.
+
+	* [r129] diario/admin.py: Added copyright notice in module admin.
+
+	* [r128] diario/models.py: Fixed #34 -- Bug with new Django-1.0...
+	  (applied the correct patch)
+
+	* [r127] AUTHORS, diario/models.py: Fixed #34 -- Bug with new
+	  Django-1.0_alpha2: diario.models (thanks Marcello
+	  and Ovidiu!)"
+
+2008-08-08  semente
+
+	* [r126] AUTHORS, examples/projects/simple/urls.py,
+	  examples/projects/with_tagging/urls.py: Fixed #33 -- examples not yet
+	  ported to newforms-admin (Thanks Michael!)
+
+2008-07-22  semente
+
+	* [r125] AUTHORS, diario/admin.py, diario/models.py: Fixed #23, #32 --
+	  New admin support
+
+2008-06-09  semente
+
+	* [r123] AUTHORS, diario/models.py, diario/utils.py: Fixed issues #28
+	  and #30 -- Unicode error (thanks Marinho, Andrews and Havard!)
+
+	* [r122] diario/templatetags/diario_tags.py: Fixed messages in tags
+	  exceptions.
+
+2008-02-26  semente
+
+	* [r119] diario/__init__.py, diario/locale/es/LC_MESSAGES/django.mo,
+	  diario/locale/es/LC_MESSAGES/django.po,
+	  diario/locale/fr/LC_MESSAGES/django.mo,
+	  diario/locale/fr/LC_MESSAGES/django.po,
+	  diario/locale/pt_BR/LC_MESSAGES/django.mo,
+	  diario/locale/pt_BR/LC_MESSAGES/django.po, diario/models.py,
+	  docs/install.txt: Fixed #27 --- Add field for enable/disable comments
+
+	* [r116] MANIFEST.in: Added the directory examples in MANIFEST.in.
+
+	* [r115] diario/__init__.py, docs/install.txt, docs/overview.txt,
+	  docs/tags.txt: Some typo changes in documentation.
+
+	* [r114] diario/settings.py, diario/views/syndication.py: Tiny typo
+	  changes.
+
+	* [r113] diario/feeds.py: Fixed bug in tag feeds (get_query_set).
+
+	* [r112] README, diario/managers.py, diario/settings.py,
+	  diario/views/syndication.py: Tiny type changes.
+
+	* [r111] diario/settings.py, diario/templatetags/diario_tags.py,
+	  examples/projects/simple/settings.py,
+	  examples/projects/with_tagging/settings.py,
+	  examples/templates/simple/flatfiles/homepage.html: Fixed bugs in
+	  examples.
+
+	* [r110] diario/locale/es/LC_MESSAGES/django.mo,
+	  diario/locale/es/LC_MESSAGES/django.po,
+	  diario/locale/fr/LC_MESSAGES/django.mo,
+	  diario/locale/fr/LC_MESSAGES/django.po,
+	  diario/locale/pt_BR/LC_MESSAGES/django.mo,
+	  diario/locale/pt_BR/LC_MESSAGES/django.po, diario/models.py: Updated
+	  models strings and locales.
+
+2008-02-08  semente
+
+	* [r109] diario/utils.py: More docstrings updated.
+
+	* [r108] INSTALL, README, docs/comments.txt[DEL], docs/install.txt,
+	  docs/managers.txt, docs/overview.txt, docs/sitemaps.txt[DEL],
+	  docs/syndication.txt[DEL], docs/templates.txt[DEL], docs/utils.txt,
+	  docs/views.txt, setup.py: Documentation updated, added docs for views,
+	  managers and utilities, and syndication, sitemaps and comments setup
+	  was moved to install.txt.
+
+	* [r107] diario/__init__.py, diario/feeds.py, diario/managers.py,
+	  diario/settings.py, diario/sitemaps.py, diario/urls/entries.py,
+	  diario/views/syndication.py: Docstrings updated.
+
+2008-02-07  semente
+
+	* [r106] diario/locale/es/LC_MESSAGES/django.mo,
+	  diario/locale/es/LC_MESSAGES/django.po,
+	  diario/locale/fr/LC_MESSAGES/django.mo,
+	  diario/locale/fr/LC_MESSAGES/django.po,
+	  diario/locale/pt_BR/LC_MESSAGES/django.mo,
+	  diario/locale/pt_BR/LC_MESSAGES/django.po: Locales updated.
+
+	* [r105] docs/comments.txt: Added documentation for integrating comments
+	  with django-diario.
+
+	* [r104] diario/feeds.py, docs/overview.txt, docs/syndication.txt: Added
+	  feeds for FreeComments provided by django.contrib.comments package.
+
+	* [r103] README, diario/__init__.py, diario/templatetags/__init__.py,
+	  diario/templatetags/diario_tags.py: No changes in code, only in
+	  comments and docstrings.
+
+	* [r95] INSTALL, MANIFEST.in, TODO, docs, docs/admin.txt,
+	  docs/install.txt, docs/overview.txt, docs/sitemaps.txt,
+	  docs/syndication.txt, docs/tags.txt, docs/templates.txt: Fixed #21 -
+	  Move documentation, and added the file TODO.
+
+	* [r94] diario/templatetags/diario_tags.py: New template tags:
+	  get_diario_entry_list and get_diario_free_comment_list.
+
+2008-01-23  semente
+
+	* [r93] diario/managers.py: Managers improved using the new
+	  TaggedItem.objects.get_by_model().
+
+	* [r92] diario/models.py, diario/urls/entries.py, diario/urls/tagged.py,
+	  diario/views/entries.py, diario/views/tagged.py: * The view
+	  diario.views.tagged.tagged_entry_list is deprecated, use
+	  tagging.views.tagged_object_list instead (from revision 130 or later).
+	  
+	  * Added a thin wrapper around date_based.object detail to support
+	  previews
+	  for draft or in future entries"
+
+2008-01-13  semente
+
+	* [r91] diario/models.py, diario/urls/entries.py, diario/urls/tagged.py,
+	  diario/views/tagged.py, examples/templates/simple/base_2col.html,
+	  examples/templates/simple/diario/entry_archive_year.html,
+	  examples/templates/with_tagging/base_2col.html: Fixed bug in URLs. The
+	  URLs is more compatible with day and month format based on 2 digits
+	  with leading zeros. --- Reverted changes in revision 79
+
+2008-01-10  semente
+
+	* [r90] setup.py: Fixed #22 --- Urls dir missing after installation
+	  (thanks Mattias de Hollander!)
+
+	* [r87] examples/templates/with_tagging/diario/entry_detail.html,
+	  examples/templates/with_tagging/diario/entry_list_tagged.html: Fixed a
+	  minor bug in examples.
+
+	* [r86] diario/views/syndication.py, examples/projects/simple/urls.py,
+	  examples/projects/with_tagging/urls.py: Added a view for feeds for
+	  more flexible URLs.
+
+2008-01-09  semente
+
+	* [r84] AUTHORS, diario/urls, diario/urls.py[DEL],
+	  diario/urls/__init__.py, diario/urls/entries.py[CPY],
+	  diario/urls/tagged.py, examples/projects/simple/urls.py,
+	  examples/projects/with_tagging/urls.py: Paths for URLs changed. URLs
+	  for tagged entry list is now more flexible.
+
+	* [r83] diario/feeds.py: Fixed reverse URL names in feeds.
+
+	* [r81] diario/managers.py: Fixed bug --- New entries were not displayed
+	  without restarting the project.
+
+	* [r80] diario/urls.py, examples/templates/simple/base.html,
+	  examples/templates/simple/diario/entry_archive.html[DEL],
+	  examples/templates/simple/diario/entry_archive_day.html,
+	  examples/templates/simple/diario/entry_archive_month.html,
+	  examples/templates/simple/diario/entry_archive_year.html,
+	  examples/templates/simple/diario/entry_detail.html,
+	  examples/templates/simple/diario/entry_list.html[CPY],
+	  examples/templates/with_tagging/base.html,
+	  examples/templates/with_tagging/base_2col.html,
+	  examples/templates/with_tagging/diario/entry_detail.html,
+	  examples/templates/with_tagging/diario/entry_list_tagged.html: Some
+	  changes in code:
+	  
+	  * Renamed template object name to 'entry';
+	  * Renamed some URL names;
+	  * Using object_list instead archive_index. object_list have paginator.
+	  
+	  Is probably that you need update yours templates.
+
+2008-01-08  semente
+
+	* [r79] diario/models.py, diario/urls.py: Fixed bug in date format for
+	  more compatibility with datetime objects and url template tag.
+
+2008-01-02  semente
+
+	* [r77] diario/views/tagged.py: Added copyright notice in tagged view.
+
+2007-12-30  semente
+
+	* [r75] examples/projects/simple, examples/projects/with_tagging: Added
+	  SVN properties to ignore *.db files in projects examples.
+
+	* [r74] AUTHORS, diario/managers.py, diario/urls.py, diario/views,
+	  diario/views/__init__.py, diario/views/tagged.py: Fixed #17 --- Draft
+	  entries or entries in future are published on tag pages (thanks Eric
+	  Moritz!!!)
+
+2007-12-13  semente
+
+	* [r69] diario/templates/base.html[DEL], diario/templates/diario[DEL],
+	  examples, examples/media, examples/projects, examples/projects/simple,
+	  examples/projects/simple/__init__.py,
+	  examples/projects/simple/manage.py,
+	  examples/projects/simple/settings.py,
+	  examples/projects/simple/urls.py, examples/projects/with_tagging,
+	  examples/projects/with_tagging/__init__.py,
+	  examples/projects/with_tagging/manage.py,
+	  examples/projects/with_tagging/settings.py,
+	  examples/projects/with_tagging/urls.py, examples/templates,
+	  examples/templates/simple, examples/templates/simple/base.html[CPY],
+	  examples/templates/simple/base_2col.html,
+	  examples/templates/simple/diario[CPY],
+	  examples/templates/simple/diario/entry_archive.html,
+	  examples/templates/simple/diario/entry_archive_day.html,
+	  examples/templates/simple/diario/entry_archive_month.html,
+	  examples/templates/simple/diario/entry_archive_year.html,
+	  examples/templates/simple/diario/entry_detail.html,
+	  examples/templates/simple/diario/entry_list_tagged.html[DEL],
+	  examples/templates/simple/flatfiles,
+	  examples/templates/simple/flatfiles/homepage.html,
+	  examples/templates/with_tagging,
+	  examples/templates/with_tagging/base.html,
+	  examples/templates/with_tagging/base_2col.html,
+	  examples/templates/with_tagging/diario,
+	  examples/templates/with_tagging/diario/entry_detail.html,
+	  examples/templates/with_tagging/diario/entry_list_tagged.html: Added
+	  projects examples with django-diario.
+
+	* [r67] AUTHORS, diario/locale/fr, diario/locale/fr/LC_MESSAGES,
+	  diario/locale/fr/LC_MESSAGES/django.mo,
+	  diario/locale/fr/LC_MESSAGES/django.po: Added French translation.
+	  Thanks Bruno Bord!
+
+	* [r66] diario/__init__.py, diario/feeds.py,
+	  diario/locale/es/LC_MESSAGES/django.mo,
+	  diario/locale/es/LC_MESSAGES/django.po,
+	  diario/locale/pt_BR/LC_MESSAGES/django.mo,
+	  diario/locale/pt_BR/LC_MESSAGES/django.po, diario/models.py, setup.py:
+	  Fixed strings in feeds.py for translation; updated translations for
+	  Brazilian Portuguese and other minor changes.
+
+2007-12-12  semente
+
+	* [r63] diario/feeds.py: Fixed a tiny typo in feeds.py.
+
+	* [r62] diario/feeds.py, diario/settings.py: DIARIO_TITLE and
+	  DIARIO_DESCRIPTION is not necessary anymore. The title and description
+	  of blog is based on result of Site.objects.get_current().
+
+	* [r59] diario/feeds.py, diario/models.py, diario/settings.py,
+	  diario/templates/diario/entry_list_tagged.html, diario/urls.py: Fixed
+	  #3 --- Support for django-tagging.
+
+	* [r58] diario/__init__.py: Changed __author__ meta information.
+
+2007-11-30  semente
+
+	* [r57] diario/urls.py: Fixed bug in previous commit.
+
+	* [r54] diario/urls.py: Added URL patterns for RSS/Atom feeds.
+
+	* [r53] diario/urls.py: Fixed bug --- Entries were not updated.
+
+	* [r52] diario/templates/base.html,
+	  diario/templates/diario/entry_archive.html,
+	  diario/templates/diario/entry_archive_day.html,
+	  diario/templates/diario/entry_archive_month.html,
+	  diario/templates/diario/entry_detail.html,
+	  diario/templates/feeds/diario_description.html: Fixed HTML escaping on
+	  templates.
+
+	* [r51] README, diario/__init__.py, diario/feeds.py, diario/managers.py,
+	  diario/models.py, diario/settings.py, diario/sitemaps.py,
+	  diario/templatetags/__init__.py, diario/templatetags/diario_tags.py,
+	  diario/urls.py, diario/utils.py, setup.py: No changes in code, only in
+	  comments and docstrings.
+
+2007-10-24  semente
+
+	* [r50] AUTHORS, diario/locale/es, diario/locale/es/LC_MESSAGES,
+	  diario/locale/es/LC_MESSAGES/django.mo,
+	  diario/locale/es/LC_MESSAGES/django.po: Added spanish translation.
+	  Thanks Ricardo Fuentes!
+
+2007-10-12  semente
+
+	* [r48] diario/sitemaps.py: Added sitemaps support.
+
+2007-10-11  semente
+
+	* [r45] MANIFEST.in, setup.py: Fixed setup.py bugs.
+
+	* [r44] diario/__init__.py, diario/templatetags/diario_tags.py,
+	  diario/utils.py, setup.py: Added SVN revision in get_version() and
+	  changes in some docstrings.
+
+	* [r39] diario/templates/base.html: Fixed #13 -- Supply a base.html
+	  template for testing reasons.
+
+2007-10-10  semente
+
+	* [r37] diario/settings.py: Some english docstrings fixes.
+
+	* [r36] diario/__init__.py, diario/feeds.py, diario/managers.py,
+	  diario/models.py, diario/settings.py, diario/urls.py: Added settings
+	  module with all application default settings.
+
+	* [r35] diario/feeds.py, diario/locale/pt_BR/LC_MESSAGES/django.mo,
+	  diario/locale/pt_BR/LC_MESSAGES/django.po, diario/managers.py,
+	  diario/models.py, diario/templatetags/diario_tags.py, diario/urls.py:
+	  Fixed #8 -- Django sites framework support.
+
+	* [r27] INSTALL, README, diario/urls.py: INTALL and README files
+	  improvements.
+
+2007-10-09  semente
+
+	* [r24] INSTALL, diario/feeds.py, diario/models.py, diario/urls.py:
+	  DIARIO_* configurations on settings.py is now optional.
+
+2007-10-08  semente
+
+	* [r23] diario/feeds.py, diario/models.py, diario/templates,
+	  diario/templates/diario, diario/templates/diario/entry_archive.html,
+	  diario/templates/diario/entry_archive_day.html,
+	  diario/templates/diario/entry_archive_month.html,
+	  diario/templates/diario/entry_archive_year.html,
+	  diario/templates/diario/entry_detail.html, diario/templates/feeds,
+	  diario/templates/feeds/diario_description.html,
+	  diario/templates/feeds/diario_title.html: Fixed #1 -- added templates
+	  examples.
+
+	* [r22] README, diario/feeds.py,
+	  diario/locale/pt_BR/LC_MESSAGES/django.mo,
+	  diario/locale/pt_BR/LC_MESSAGES/django.po, diario/models.py,
+	  diario/templatetags/__init__.py, diario/templatetags/diario.py[DEL],
+	  diario/templatetags/diario_tags.py[CPY], diario/urls.py,
+	  diario/utils.py, setup.py: Fixed bugs in templatetags; translation
+	  strings updated; some meta info removed; and others minor changes.
+
+	* [r21] diario/locale/pt_BR/LC_MESSAGES/django.mo,
+	  diario/locale/pt_BR/LC_MESSAGES/django.po, diario/models.py: Fixed
+	  some internationalization bugs.
+
+	* [r20] diario/locale, diario/locale/pt_BR,
+	  diario/locale/pt_BR/LC_MESSAGES,
+	  diario/locale/pt_BR/LC_MESSAGES/django.mo,
+	  diario/locale/pt_BR/LC_MESSAGES/django.po, diario/models.py: Fixed #4
+	  -- added internationalization support and translation for Brazilian
+	  Portuguese.
+
+2007-10-07  semente
+
+	* [r16] diario/utils.py, setup.py: Fixed issue #5.
+
+	* [r15] setup.py: Fixed version value in setup.py.
+
+	* [r12] INSTALL: INSTALL file rewrite.
+
+2007-10-06  semente
+
+	* [r7] README: Fixed ortography in README.
+
+	* [r5] INSTALL: Added installation instructions.
+
+	* [r4] README, diario/feeds.py, diario/models.py: Fixed some bugs and
+	  README file added.
+
+2007-10-05  semente
+
+	* [r3] AUTHORS, MANIFEST.in: Added AUTHORS and MANIFEST.in files.
+
+	* [r2] ., COPYING, diario, diario/__init__.py, diario/feeds.py,
+	  diario/models.py, diario/templatetags,
+	  diario/templatetags/__init__.py, diario/templatetags/diario.py,
+	  diario/urls.py, diario/utils.py, setup.py: Initial import.
+
+2007-10-05  
+
+	* [r1] .: Initial directory structure.
+

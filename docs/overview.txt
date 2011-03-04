@@ -1,0 +1,101 @@
+=============
+Django Diário
+=============
+
+**Diário** (diary in portuguese) is a pluggable weblog application for
+`Django`_ projects, with many features like multi-user and tagging
+support, web syndication `feeds`_, `sitemaps`_.
+
+.. _`Django`: http://www.djangoproject.com/
+.. _`feeds`: http://en.wikipedia.org/wiki/Web_feed
+.. _`sitemaps`: http://en.wikipedia.org/wiki/Sitemaps
+
+Web page
+  http://django-diario.googlecode.com
+
+
+Features
+========
+
+List of some features of Django Diário:
+
+* Free/Libre Software, covered by LGPLv3;
+
+* Uses built-in Django administration interface;
+
+* Multi-user support;
+
+* Tagging with `django-tagging`_ (optional);
+
+* RSS/Atom web feeds (for entries, authors, tags and comments);
+
+* Support for reStructeredText, Markdown and Textile markup
+  languages;
+
+* Useful template tags;
+
+* Sitemaps support;
+
+* Django "sites" framework support;
+
+* Django contrib application ``comments`` support;
+
+* Support for internationalization (available in English, Brazilian
+  Portuguese, Russian and, partially, in Spanish, French...);
+
+* Support to ping weblog directories;
+
+* Pretty `permalinks`_.
+
+.. _`django-tagging`: http://code.google.com/p/django-tagging/
+.. _`permalinks`: http://en.wikipedia.org/wiki/Permalink
+
+
+Installing
+==========
+
+Is basically run ``setup.py install``, like follow::
+
+    # python setup.py install
+
+...and configure your project ``urls.py`` and ``settings.py``.
+
+For detailed install and setup instructions, see the file
+``docs/install.txt``. In this file, you have instructions to setup
+multi-user and tagging support, comments, feeds, sitemaps and others.
+
+
+HTML Templates
+==============
+
+On http://django-diario.googlecode.com/svn/trunk/examples/,
+you have examples of Django projects with templates. 
+
+
+Documentation
+=============
+
+In ``docs/`` directory you found more documentation, like views,
+managers, models, template tags, utilities, admin, etc...
+
+
+Support
+=======
+
+Use the `django-apps <http://groups.google.com/group/django-apps>`_
+Google Group. Prefix your message with (diario).
+
+
+Contributing
+============
+
+If you find any problems in the code or documentation, please take 30
+seconds to fill out a `issue
+<http://code.google.com/p/django-diario/issues/list>`_.
+
+The contributing with code or translation is MUCH-APPRECIATED. You
+feel free to send patchs. Is possible too you get write access in
+Subversion repository.
+
+To get a list of all work needed for future releases, visit the URL
+http://code.google.com/p/django-diario/issues/list?q=label:Milestone%20status:Accepted,Started

@@ -1,0 +1,6 @@
+.svn
+.hg
+.bzr
+.*.swp
+.DS_Store
+Thumbs.db

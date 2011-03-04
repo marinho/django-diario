@@ -1,0 +1,123 @@
+# Português do Brasil translation of Django Diário
+# Copyright (c) 2007-2008 Guilherme Gondim
+# This file is distributed under the same license as the Diário package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: django-diario 0.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-02-03 13:18-0200\n"
+"PO-Revision-Date: 2009-02-03 13:58-0200\n"
+"Last-Translator: Guilherme Gondim <semente@taurinus.org>\n"
+"Language-Team: Português Brasil <django-l10n-portuguese@googlegroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: admin.py:28
+msgid "Status"
+msgstr "Estado"
+
+#: admin.py:31
+msgid "Discussion"
+msgstr "Discussão"
+
+#: admin.py:34
+msgid "Advanced options"
+msgstr "Opções avançadas"
+
+#: models.py:33
+msgid "Raw text"
+msgstr "Texto puro"
+
+#: models.py:42
+msgid "title"
+msgstr "título"
+
+#: models.py:44
+msgid "slug"
+msgstr "slug"
+
+#: models.py:46
+msgid ""
+"Automatically built from the title. A slug is a short label generally used "
+"in URLs."
+msgstr ""
+"Construído automaticamente a partir do título. Um slug é uma pequena "
+"etiqueta geralmente utilizada em URLs."
+
+#: models.py:49
+msgid "body"
+msgstr "corpo"
+
+#: models.py:51
+msgid "body in HTML"
+msgstr "corpo em HTML"
+
+#: models.py:56
+msgid "markup language"
+msgstr "linguagem de marcação"
+
+#: models.py:60
+msgid "Select \"Raw text\" to enter HTML or apply markup elsewhere."
+msgstr "Use \"Texto puro\" para escrever em HTML ou para aplicar a marcação em outro lugar"
+
+#: models.py:64
+msgid "draft"
+msgstr "rascunho"
+
+#: models.py:66
+msgid "Drafts are not published."
+msgstr "Rascunhos não são publicados."
+
+#: models.py:69
+msgid "date published"
+msgstr "data de publicação"
+
+#: models.py:71
+msgid "Entries in future dates are only published on correct date."
+msgstr "Entradas com datas no futuro são publicadas somente na data certa."
+
+#: models.py:77
+msgid "publish on"
+msgstr "publicar em"
+
+#: models.py:79
+msgid "enable comments"
+msgstr "habilitar comentários"
+
+#: models.py:93
+msgid "entry"
+msgstr "entrada"
+
+#: models.py:94
+msgid "entries"
+msgstr "entradas"
+
+#: feeds/comments.py:21
+msgid "Latest comments on Weblog"
+msgstr "Últimos comentários no Weblog"
+
+#: feeds/comments.py:28
+#, python-format
+msgid "%(title)s's Weblog comments"
+msgstr "Comentários no Weblog de %(title)s"
+
+#: feeds/entries.py:24
+msgid "Latest entries on Weblog"
+msgstr "Últimas entradas no Weblog"
+
+#: feeds/entries.py:31
+#, python-format
+msgid "%(title)s's Weblog"
+msgstr "Weblog de %(title)s"
+
+#: feeds/tagged.py:35
+#, python-format
+msgid "%(title)s's Weblog: entries tagged \"%(tag name)s\""
+msgstr "Weblog de %(title)s: entradas com a tag \"%(tag name)s\""
+
+#: feeds/tagged.py:39
+#, python-format
+msgid "Latest entries for tag \"%(tag name)s\""
+msgstr "Últimas entradas com a tag \"%(tag name)s\""

@@ -1,0 +1,11 @@
+include MANIFEST.in
+include AUTHORS
+include ChangeLog
+include COPYING.LESSER
+include INSTALL
+include README
+include TODO
+recursive-include docs *.txt
+recursive-include examples *
+recursive-include diario/locale *.po *.mo
+recursive-include diario/templates *.html

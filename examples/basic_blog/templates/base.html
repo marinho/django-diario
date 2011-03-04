@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8"/>
+    <title>Simple Website | {% block title %}Home page{% endblock %}</title>
+  </head>
+
+  <body>
+    <div id="header">
+      <h1>Simple Website</h1>
+
+      <p>This is a simple project
+	with <a href="http://django-diario.googlecode.com">diario</a>
+	application.</p>
+
+      <ul>
+	<li><a href="/">Home page</a></li>
+	<li><a href="{% url diario-entry-list %}">Weblog</a></li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <div id="content">
+      {% block content %}{% endblock %}
+    </div>
+
+    <hr />
+
+    <div id="footer">
+      <p>Copyright &copy; 2007 My Website</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+{% extends "base_2col.html"  %}
+{% load diario_entries %}
+
+{% block content-main %}
+
+<div id="main">
+  <h1>Weblog</h1>
+
+  {% get_diario_entry_list 5 as latest_entries %}
+
+  {% if latest_entries %}
+    {% for entry in latest_entries %}
+    <div>
+      <h2><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></h2>
+      <p>{{ entry.pub_date|date:"F j, Y" }}</p>
+      {{ entry.body|safe }}
+    </div>
+    {% endfor %}
+  {% else %}
+    <p>No entries published yet. You can add entries
+      with <a href="/admin/">/admin/</a>.</p>
+  {% endif %}
+</div>      
+
+{% endblock %}

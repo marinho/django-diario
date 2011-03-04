@@ -1,0 +1,11 @@
+{% extends "base_2col.html" %}
+
+{% block title %}Weblog | {{ entry.title|escape }}{% endblock %}
+
+{% block content-main %}
+
+<h1>{{ entry.title }}</h1>
+{{ entry.body|safe }}
+<p>Posted on {{ entry.pub_date|date:"F j, Y" }}</p>
+
+{% endblock %}

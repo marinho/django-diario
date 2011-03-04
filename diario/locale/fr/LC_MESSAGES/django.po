@@ -1,0 +1,127 @@
+# French translation of Django Diário
+# Copyright (c) 2007-2008 Bruno Bord, Guilherme Gondim and contributors
+# This file is distributed under the same license as the Diário package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: django-diario 0.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-02-03 13:18-0200\n"
+"PO-Revision-Date: 2009-02-03 13:57-0200\n"
+"Last-Translator: Bruno Bord <bbord@interfaceip.fr>\n"
+"Language-Team: Bruno Bord <bruno@jehaisleprintemps.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+
+#: admin.py:28
+msgid "Status"
+msgstr ""
+
+#: admin.py:31
+msgid "Discussion"
+msgstr ""
+
+#: admin.py:34
+#, fuzzy
+msgid "Advanced options"
+msgstr "Autres options"
+
+#: models.py:33
+msgid "Raw text"
+msgstr ""
+
+#: models.py:42
+msgid "title"
+msgstr "titre"
+
+#: models.py:44
+msgid "slug"
+msgstr ""
+
+#: models.py:46
+msgid ""
+"Automatically built from the title. A slug is a short label generally used "
+"in URLs."
+msgstr ""
+"Construit automatiquement à partir du titre. Un \"slug\" est une chaîne "
+"utilisée dans les URLs."
+
+#: models.py:49
+msgid "body"
+msgstr "corps"
+
+#: models.py:51
+msgid "body in HTML"
+msgstr "corps en HTML"
+
+#: models.py:56
+msgid "markup language"
+msgstr "format de balisage"
+
+#: models.py:60
+msgid "Select \"Raw text\" to enter HTML or apply markup elsewhere."
+msgstr ""
+
+#: models.py:64
+msgid "draft"
+msgstr "brouillon"
+
+#: models.py:66
+msgid "Drafts are not published."
+msgstr "Les brouillons ne sont pas publiés."
+
+#: models.py:69
+msgid "date published"
+msgstr "date de publication"
+
+#: models.py:71
+msgid "Entries in future dates are only published on correct date."
+msgstr ""
+"Les articles avec des dates dans le futur seront publiés à la bonne date."
+
+#: models.py:77
+msgid "publish on"
+msgstr "publié sur"
+
+#: models.py:79
+msgid "enable comments"
+msgstr ""
+
+#: models.py:93
+msgid "entry"
+msgstr "article"
+
+#: models.py:94
+msgid "entries"
+msgstr "articles"
+
+#: feeds/comments.py:21
+msgid "Latest comments on Weblog"
+msgstr "Derniers commentaires du blog"
+
+#: feeds/comments.py:28
+#, python-format
+msgid "%(title)s's Weblog comments"
+msgstr ""
+
+#: feeds/entries.py:24
+msgid "Latest entries on Weblog"
+msgstr "Derniers articles du blog"
+
+#: feeds/entries.py:31
+#, python-format
+msgid "%(title)s's Weblog"
+msgstr "Le blog de %(title)s"
+
+#: feeds/tagged.py:35
+#, python-format
+msgid "%(title)s's Weblog: entries tagged \"%(tag name)s\""
+msgstr "Le blog de %(title)s : articles avec le tag \"%(tag name)s\""
+
+#: feeds/tagged.py:39
+#, python-format
+msgid "Latest entries for tag \"%(tag name)s\""
+msgstr "Derniers articles pour le tag \"%(tag name)s\""

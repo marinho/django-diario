@@ -1,0 +1,42 @@
+======================
+Django Admin Interface
+======================
+
+Diário uses the built-in Django admin application for manage your blog
+entries. If you haven't configured Django admin app, add the code
+below to your ``yourproject.settings``::
+
+  MIDDLEWARE_CLASSES = (
+      ...
+      'django.contrib.sessions.middleware.SessionMiddleware',
+      'django.contrib.auth.middleware.AuthenticationMiddleware',
+      ...
+  )
+  INSTALLED_APPS = (
+      ...
+      'django.contrib.auth',
+      'django.contrib.sessions',
+      'django.contrib.admin',
+  )
+
+You also need to add this to your ``urls.py`` file::
+
+  from django.contrib import admin
+  admin.autodiscover()
+
+Also add this to your ``urlpatterns``:: 
+
+  urlpatterns = patterns(
+      ...
+      (r'^admin/(.*)', admin.site.root),
+  )
+
+And then create the admin database structure running ``syncdb``::
+
+  python manage.py syncdb
+
+For more information, see `Official Django Tutorial, part 2`_ and
+`Admin documentation`_.
+
+.. _`Official Django Tutorial, part 2`: http://docs.djangoproject.com/en/dev/intro/tutorial02/
+.. _`Admin documentation`: http://docs.djangoproject.com/en/dev/ref/contrib/admin/

@@ -1,0 +1,40 @@
+============
+Diário Utils
+============
+
+Diário utilities.
+
+
+Function Reference
+==================
+
+markuping
+---------
+
+Transform plain text markup syntaxes to HTML with filters in 
+django.contrib.markup.templatetags.
+
+*Required arguments:*
+   
+    * ``markup``: 'markdown', 'rest' or 'texttile'. For any other string 
+      value is returned without modifications.
+
+    * ``value``: plain text input
+
+ping_weblog_directory
+---------------------
+
+Ping weblog directory about weblog updates. Works with Technorati,
+ping-o-matic and others.
+
+*Required arguments:*
+
+    * ``site_name``: name of site/weblog.
+    * ``site_url``: site/weblog URL.
+    * ``server_url``: URL of XML-RPC server to ping.
+
+*Optional arguments:*
+
+    * ``fail_silently``: if true, don't raises any exception when ping fails.
+
+Note: In signals module you have a signal to ping ping-o-matic.

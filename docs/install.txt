@@ -1,0 +1,358 @@
+========================
+Installing Django Diário
+========================
+
+Resolving dependencies
+======================
+
+Django Diário depends on:
+
+* Python 2.3 or later;  
+* Django 1.0 or later.
+
+It is recommended that you have at least one of the following Python packages
+installed:
+
+* `python-docutils`_, for reStrutcturedText markup language;
+* `python-markdown`_, for Markdown markup language;
+* `python-textile`_, for Textile markup language.
+
+.. _`python-docutils`: http://docutils.sourceforge.net/
+.. _`python-markdown`: http://www.freewisdom.org/projects/python-markdown/
+.. _`python-textile`:  http://cheeseshop.python.org/pypi/textile
+
+and for tagging support, the following Django application:
+
+* `django-tagging`_, a great tagging application for Django
+  (Diário works without him).
+
+.. _`django-tagging`:  http://django-tagging.googlecode.com/
+
+Obviously, you need a pre-configured and working Django Project. If
+you are a new Django user, the `official documentation`_ will help you.
+
+.. _`official documentation`: http://docs.djangoproject.com/
+
+
+Getting
+=======
+
+Get the latest version of Diário in `download page`_ and extract it
+in a directory of your choice::
+
+    tar -xzvf django-diario-*-*.tar.gz
+
+.. _`download page`: http://code.google.com/p/django-diario/downloads/list
+
+MS Windows users can extract the file above with `7-zip`_ software.
+
+If you have a `Subversion`_ client installed you can check out the
+last Diário development source code::
+
+    svn checkout http://django-diario.googlecode.com/svn/trunk/ django-diario
+
+.. _`7-zip`: http://www.7-zip.org/
+.. _`Subversion`: http://subversion.tigris.org/
+
+
+Installing
+==========
+
+To install Diário Python package you need to execute the following
+command in ``django-diario`` directory as root/administrator::
+
+    python setup.py install
+
+If you are a privileged GNU or Unix user, run::
+
+    sudo python setup.py install --prefix=/usr/local
+
+For GNU or Unix users that doesn't have root privilegies, it's
+possible to install Diário in your home directory. For these,
+run::
+
+    python setup.py install --home=$HOME
+
+The path where you installed Diário must be in your ``sys.path``. You
+can verify that the application is available entering the following
+command::
+
+    python -c "import diario; print diario.get_version()"
+
+You will get an output like ``0.2``.
+
+For more information, see the Python documentation page 
+`Installing Python Modules`_.
+
+.. _`Installing Python Modules`: http://docs.python.org/inst/inst.html
+
+
+Configuring
+===========
+
+First add the ``diario`` app to your INSTALLED_APPS (``yourproject.settings``)::
+
+    INSTALLED_APPS = (
+        ...
+        'django.contrib.sites', # Diário needs this!
+        'tagging',              # Only if you have django-tagging
+                                # installed.
+        'diario',
+    )
+
+And run the command ``manage.py syncdb``. The ``syncdb`` command
+creates the necessary database tables and creates permission objects
+for all installed apps that need them.
+
+
+Settings
+--------
+
+Diário has the following settings available. You can set them in your 
+``settings.py``. If you doesn't set them it will assume the default values::
+
+    DIARIO_DEFAULT_MARKUP_LANG
+        Markup language for blog entries. Options: 'rest', 'textile',
+        'markdown' or 'raw' for raw text.
+        Default: 'raw'.
+                                
+    DIARIO_NUM_LATEST
+        Number of latest items on archive_index view. Default: 10.
+
+
+URLconf
+-------
+
+Add this pattern in your ``urlpatterns`` (found in ``urls.py``)::
+
+    (r'^blog/', include('diario.urls.entries')),
+
+You can change ``^blog/`` to any URL. With these pattern, you can access the
+weblog with the follow URL:
+
+* http://www.example.net/blog/, a ``list_detail.object_list`` generic view;
+
+For date based's (generic) views, you have:
+
+* http://www.example.net/blog/2008/, entries for year 2008
+* http://www.example.net/blog/2008/02/, entries for February, 2008
+* http://www.example.net/blog/2008/02/07/, entries for February 07, 2008
+
+For entry detail:
+
+* http://www.example.net/blog/2008/02/07/hello-world/
+
+
+Web syndication
+---------------
+
+For configure your blog feeds, customize ``urls.py`` of your project
+as follow in example below::
+
+    from diario.feeds.entries import RssEntriesFeed, AtomEntriesFeed
+  
+    entries_feeds = {
+        'rss': RssEntriesFeed,
+        'atom': AtomEntriesFeed,
+    }
+
+    urlpatterns = patterns(
+        ...
+        (r'^blog/(?P<url>(rss|atom))/$', 'django.contrib.syndication.views.feed', {'feed_dict': entries_feeds}),
+    )
+
+With configuration above, the URLs blog feeds is like below:
+
+* http://www.example.net/blog/rss/
+* http://www.example.net/blog/atom/
+
+For more information, see `Syndication Feed Framework`_.
+
+.. _`Syndication Feed Framework`: http://docs.djangoproject.com/en/dev/ref/contrib/syndication/
+
+
+
+Setup tagging support
+=====================
+
+URLconf
+-------
+
+If you have django-tagging installed and uses him in your project, add
+the follow pattern in your URLconf::
+
+    (r'^blog/tags/', include('diario.urls.tagged'))
+
+You can access the tagged entries list like below:
+
+    http://www.example.net/blog/tags/example/
+
+You can change ``^blog/tags/`` to any URL.
+
+
+Web syndication
+---------------
+
+For setup feeds of entries separated by tag, add this in your ``urls.py``::
+
+    from diario.feeds.tagged import RssEntriesByTagFeed, AtomEntriesByTagFeed
+
+    entries_by_tag_feeds = {
+        'rss': RssEntriesByTagFeed,
+        'atom': AtomEntriesByTagFeed,
+    }
+
+And the follow pattern in your ``urlpatterns``::
+
+    (r'^blog/tags/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': entries_by_tag_feeds}),
+
+You can access the feeds like below:
+
+* http://www.example.net/blog/tags/rss/tagexample/
+* http://www.example.net/blog/tags/atom/othertag/
+
+django-diario have a view for more flexible feeds URL::
+
+    (r'^blog/tags/(?P<bit>[^/]+)/(?P<slug>(rss|atom))/$', 'diario.views.syndication.feed', {'feed_dict': entries_by_tag_feeds}),
+
+With the pattern above you now have URLs like this:
+
+* http://www.example.net/blog/tags/tagexample/rss/
+* http://www.example.net/blog/tags/othertag/atom/
+
+
+
+Showing entries separated by authors
+====================================
+
+URLconf
+-------
+
+If you want show entries separated by authors, add the follow pattern
+in your URLconf::
+
+    (r'^blog/authors/', include('diario.urls.entries_by_author'))
+
+You can access the author entries list like below:
+
+    http://www.example.net/blog/authors/example/
+
+You can change ``^blog/authors/`` to any URL.
+
+
+Web syndication
+---------------
+
+For setup feeds of entries separated by author, add this in your ``urls.py``::
+
+    from diario.feeds.entries_by_author import RssEntriesByAuthorFeed, AtomEntriesByAuthorFeed
+
+    entries_by_author_feeds = {
+        'rss': RssEntriesByAuthorFeed,
+        'atom': AtomEntriesByAuthorFeed,
+    }
+
+And the follow pattern in your ``urlpatterns``::
+
+    (r'^blog/authors/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': entries_by_author_feeds}),
+
+You can access the feeds like below:
+
+* http://www.example.net/blog/authors/rss/authorexample/
+* http://www.example.net/blog/authors/atom/otherauthor/
+
+django-diario have a view for more flexible feeds URL::
+
+    (r'^blog/authors/(?P<bit>[^/]+)/(?P<slug>(rss|atom))/$', 'diario.views.syndication.feed', {'feed_dict': entries_by_author_feeds}),
+
+With the pattern above you now have URLs like this:
+
+* http://www.example.net/blog/authors/authorexample/rss/
+* http://www.example.net/blog/authors/otherauthor/atom/
+
+
+
+Comments setup
+==============
+
+Django includes some basic commenting functionality
+(``django.contrib.comments``) that can save you a ton of time if you
+want to allow users to add comments to objects such as blog entries.
+
+
+Comment
+-----------
+
+Django's comments are flexible enough that they can be used on
+pretty much anything.
+
+See the page
+http://docs.djangoproject.com/en/dev/ref/contrib/comments/ for
+how to setup comments.
+
+
+Web syndication
+---------------
+
+If you uses ``Comment`` provided by ``django.contrib.comments``
+package, you can set up feed for entries comments in your blog::
+
+    from diario.feeds.comments import (RssCommentsFeed, RssCommentsByEntryFeed,
+                                       AtomCommentsFeed, AtomCommentsByEntryFeed)
+
+    blog_comments_feeds = {
+        'rss': RssCommentsFeed,
+        'atom': AtomCommentsFeed,
+    }
+
+    blog_comments_by_entry_feeds = {
+        'rss': RssCommentsByEntryFeed,
+        'atom': AtomCommentsByEntryFeed
+    }
+
+    urlpatterns = patterns(
+        ...
+        (r'^blog/comments/(?P<url>(rss|atom))/$', 'django.contrib.syndication.views.feed', {'feed_dict': blog_comments_feeds}),
+        (r'^blog/comments/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': blog_comments_by_entry_feeds}),
+    )
+
+You can access the feeds like below:
+
+* http://www.example.net/blog/comments/rss/, for all blog comments
+* http://www.example.net/blog/comments/atom/13/, for entry 13 comments
+
+
+
+Sitemaps Setup
+==============
+
+To setup the sitemaps app in your project, add ``django.contrib.sitemaps``.
+
+Make sure ``django.template.loaders.app_directories.load_template_source`` 
+is in your ``TEMPLATE_LOADERS`` setting.
+
+
+Initialization
+--------------
+
+To activate sitemap generation on your Django site, add this lines to
+your `URLconf`_::
+
+  from diario.sitemaps import DiarioSitemap
+
+  sitemaps = {
+      ...  # other sitemaps sections
+      'weblog': DiarioSitemap,
+  }
+
+  urlpatterns = patterns(
+      ...
+      (r'^sitemap.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
+  )
+
+.. _`URLconf`: http://docs.djangoproject.com/en/dev/topics/http/urls/
+
+This tells Django to build a sitemap when a client accesses ``/sitemap.xml``.
+
+See more documentation in
+http://docs.djangoproject.com/en/dev/ref/contrib/sitemaps/.

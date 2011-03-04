@@ -1,0 +1,37 @@
+==============
+Diário Signals
+==============
+
+Signals relating to entries.
+
+
+Signals Reference
+=================
+
+convert_body_to_html
+--------------------
+
+Convert plain text markup in ``body_source`` field to HTML.
+
+This signal always connected in models module using ``pre_save``
+method.
+
+
+update_draft_date
+-----------------
+
+Update instance's pub_date if entry was draft.
+
+This signal always connected in models module using ``pre_save``
+method.
+
+ping_with_pingomatic
+--------------------
+
+Updates multiple services and search engines about updates to
+weblog content, with `ping-o-matic <http://pingomatic.com/>`_.
+
+To connect this signal, you need use ``post_save``
+method. Example::
+
+  signals.post_save.connect(ping_with_pingomatic, sender=Entry)

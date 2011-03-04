@@ -1,0 +1,125 @@
+# Russian translation for Django Diário.
+# Copyright (c) 2009 Andy Mikhailenko, Guilherme Gondim
+# This file is distributed under the same license as the Diário package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: django-diario 0.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-02-03 13:56-0200\n"
+"PO-Revision-Date: 2009-02-03 14:01-0200\n"
+"Last-Translator: Andy Mikhailenko <neithere@gmail.com>\n"
+"Language-Team: Russian <neithere@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: admin.py:28
+msgid "Status"
+msgstr "Состояние"
+
+#: admin.py:31
+msgid "Discussion"
+msgstr "Дискуссия"
+
+#: admin.py:34
+msgid "Advanced options"
+msgstr "Дополнительные настройки"
+
+#: models.py:33
+msgid "Raw text"
+msgstr "Простой текст"
+
+#: models.py:42
+msgid "title"
+msgstr "заголовок"
+
+#: models.py:44
+msgid "slug"
+msgstr "slug"
+
+#: models.py:46
+msgid ""
+"Automatically built from the title. A slug is a short label generally used "
+"in URLs."
+msgstr ""
+"Автоматически создается из заголовка. Slug -- это короткая надпись, обычно "
+"используемая в ссылках. "
+
+#: models.py:49
+msgid "body"
+msgstr "текст"
+
+#: models.py:51
+msgid "body in HTML"
+msgstr "текст в HTML"
+
+#: models.py:56
+msgid "markup language"
+msgstr "язык разметки"
+
+#: models.py:60
+msgid "Select \"Raw text\" to enter HTML or apply markup elsewhere."
+msgstr ""
+"Выберите \"Простой текст\", чтобы писать сразу в HTML или обработать "
+"разметку в другом месте."
+
+#: models.py:64
+msgid "draft"
+msgstr "черновик"
+
+#: models.py:66
+msgid "Drafts are not published."
+msgstr "Черновики не публикуются."
+
+#: models.py:69
+msgid "date published"
+msgstr "дата публикации"
+
+#: models.py:71
+msgid "Entries in future dates are only published on correct date."
+msgstr "Записи с будущими датами публикуются только в означенный день."
+
+#: models.py:77
+msgid "publish on"
+msgstr "опубликовать в"
+
+#: models.py:79
+msgid "enable comments"
+msgstr "разрешить комментарии"
+
+#: models.py:93
+msgid "entry"
+msgstr "запись"
+
+#: models.py:94
+msgid "entries"
+msgstr "записи"
+
+#: feeds/comments.py:21
+msgid "Latest comments on Weblog"
+msgstr "Последние комментарии в блоге"
+
+#: feeds/comments.py:28
+#, python-format
+msgid "%(title)s's Weblog comments"
+msgstr "Комментарии к блогу %(title)s"
+
+#: feeds/entries.py:24
+msgid "Latest entries on Weblog"
+msgstr "Последнии записи в блоге"
+
+#: feeds/entries.py:31
+#, python-format
+msgid "%(title)s's Weblog"
+msgstr "Блог %(title)s"
+
+#: feeds/tagged.py:35
+#, python-format
+msgid "%(title)s's Weblog: entries tagged \"%(tag name)s\""
+msgstr "Блог %(title)s: записи с меткой \"%(tag name)s\""
+
+#: feeds/tagged.py:39
+#, python-format
+msgid "Latest entries for tag \"%(tag name)s\""
+msgstr "Последние записи с меткой \"%(tag name)s\""

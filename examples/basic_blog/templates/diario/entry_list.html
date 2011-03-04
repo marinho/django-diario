@@ -1,0 +1,15 @@
+{% extends "base_2col.html" %}
+
+{% block title %}Weblog{% endblock %}
+
+{% block content-main %}
+
+<h1>Latest entries</h1>
+
+{% for entry in entry_list %}
+  <h2><a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a></h2>
+  {{ entry.body|safe }}  
+  <p>Posted on {{ entry.pub_date|date:"F j, Y" }}</p>
+{% endfor %}
+
+{% endblock %}

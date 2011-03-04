@@ -1,0 +1,38 @@
+============
+Diário Views
+============
+
+The ``diario.views`` package contains views to handle useful simple
+cases for Diário.
+
+
+View Reference
+==============
+
+``diario.views.entries.entry_detail``
+-------------------------------------
+
+**Description:**
+
+A wrapper around ``django.views.generic.date_based.object_detail``
+which creates a ``QuerySet`` containing drafts and future entries if
+user has permission to change entries (``diario.change_entry``).
+
+This is useful for preview entries with your own templates and CSS.
+
+Tip: Uses the *View on site* button in Admin interface to access yours
+drafts and entries in future.
+
+**Required and optional arguments:** 
+
+The same as ``django.views.generic.date_based.object_detail``.
+
+**Template context:**
+
+The same as ``django.views.generic.date_based.object_detail``.
+
+
+``diario.views.syndication.feed``
+---------------------------------
+
+Not docummented yet.

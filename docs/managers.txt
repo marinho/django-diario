@@ -1,0 +1,32 @@
+===============
+Diário Managers
+===============
+
+Custom managers for Django models registered with Diário application.
+
+
+The ``PublishedManager``
+========================
+
+Manager for published entries on all sites. A published entry is
+non-draft and/or non-future entry.
+
+``PublishedManager`` is a custom ``django.db.models.Manager`` and
+adds the following methods:
+
+    ``tagged(tag_instance)``
+        Returns a QuerySet for a tag.
+                
+
+The ``CurrentSitePublishedManager``
+===================================
+
+Manager for published entries on current site. A published entry is
+non-draft and/or non-future entry.
+
+``CurrentSitePublishedManager`` is a custom
+``django.contrib.sites.managers.CurrentSitemanager`` and adds the
+following methods:
+
+    ``tagged(tag_instance)``
+        Returns a QuerySet for a tag.

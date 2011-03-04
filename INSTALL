@@ -1,0 +1,8 @@
+For detailed and updated install and setup instructions, see
+the file ``docs/install.txt''.
+
+Is basically run ``setup.py install'', like follow:
+
+  # python setup.py install
+
+...and configure your project urls.py and settings.py.

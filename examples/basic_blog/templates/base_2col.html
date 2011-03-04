@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load diario_entries %}
+
+{% block content %}
+
+{% block content-main %}{% endblock %}
+
+<hr />
+
+{% block content-related %}
+
+<div id="sidebar">
+  <h1>Archive</h1>
+  
+  {% get_diario_month_list as archive %}
+
+  {% if archive %}
+    {% for month in archive %}
+    <ul>
+      <li><a href="{% url diario-archive-month month.year,month|date:"m" %}">{{ month|date:"F, Y" }}</a></li>
+    </ul>
+    {% endfor %}
+  {% else %}
+    <p>Empty archive. No entries published.</p>
+  {% endif %}
+ 
+</div>
+
+{% endblock %}
+
+{% endblock%}
