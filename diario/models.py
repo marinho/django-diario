@@ -90,6 +90,7 @@ class Entry(models.Model):
     published_on_site = CurrentSitePublishedManager('publish_on')
 
     class Meta:
+        abstract      = True
         get_latest_by = 'pub_date'
         ordering      = ('-pub_date',)
         verbose_name  = _('entry')
